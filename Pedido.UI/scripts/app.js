@@ -1,0 +1,1 @@
+﻿var pedidoApp = angular.module('pedidoApp', ['ngRoute']);

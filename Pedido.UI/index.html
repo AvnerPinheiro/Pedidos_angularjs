@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="pedidoApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <link href="scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="scripts/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="pedido/pedido.component.js"></script>
+    <script src="pedido/pedido.service.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" ng-href="#!pedido">Pedidos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+</body>
+</html>

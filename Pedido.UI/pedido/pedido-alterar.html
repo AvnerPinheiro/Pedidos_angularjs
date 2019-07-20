@@ -1,0 +1,61 @@
+﻿<form>
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Descrição</label>
+                <input type="text" required class="form-control" ng-model="$ctrl.pedido.Nome">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Data</label>
+                <input type="text" required class="form-control" ng-model="$ctrl.pedido.Data">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Total</label>
+                <input type="text" readonly class="form-control" ng-model="$ctrl.pedido.Total">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" required class="form-control" ng-model="$ctrl.pedido.Usuario">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h3>Produtos</h3>
+    <div class="form-row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <select class="form-control" ng-model="$ctrl.produtoSelecionado">
+                    <option ng-repeat="produto in $ctrl.produtos" value="{{produto.ProdutoId}}">{{produto.Descricao}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" ng-click="$ctrl.AdicionarProduto()"><span class="oi oi-plus"></span> Adicionar</button>
+        </div>
+    </div>
+    <div class="form-row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Descrição</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="produto in $ctrl.pedido.Produtos track by $index">
+                    <td scope="col">{{produto.ProdutoId}}</td>
+                    <td scope="col">{{produto.Descricao}}</td>
+                    <td ng-click="$ctrl.RemoverProduto($index)">Excluir</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" class="btn btn-primary"ng-click="$ctrl.Salvar()">Salvar</button>
+</form>
