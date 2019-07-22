@@ -10,6 +10,7 @@ namespace Pedido.Dominio
     {
         public int ProdutoId { get; set; }
         public string Descricao { get; set; }
+        public long Valor { get; set; }
         public virtual List<Pedido> Pedidos { get; set; }
     }
 }

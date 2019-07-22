@@ -23,29 +23,40 @@ angular.
     });
 
 function PedidoAlterarController($scope, pedidoService) {
-    this.pedido = {};
-    this.pedido.Produtos = [];
+    var model = this;
+    model.pedido = {};
+    model.pedido.Produtos = [];
+    model.pedido.Total = 500;
 
     pedidoService.ListarProdutos(function (response) {
-        this.produtos = response.data;
+        model.produtos = response.data;
     });
 
-    this.AdicionarProduto = function () {
-        if (this.produtoSelecionado) {
-            let obj = this.produtos.filter((produto) => {
-                return produto.idProduto == this.produtoSelecionado;
+    model.AdicionarProduto = function () {
+        if (model.produtoSelecionado) {
+            let obj = model.produtos.filter((produto) => {
+                return produto.ProdutoId == model.produtoSelecionado;
             });
             if (obj.length > 0) {
-                this.pedido.Produtos.push(obj[0]);
+                model.pedido.Produtos.push(obj[0]);
             }
+            AtualizarTotal();
         }
     }
 
-    this.RemoverProduto = function (index) {
-        this.pedido.Produtos.splice(index, 1);
+    model.RemoverProduto = function (index) {
+        model.pedido.Produtos.splice(index, 1);
+        AtualizarTotal();
     }
 
-    this.Salvar = function () {
-        console.log(this.pedido);
+    model.Salvar = function () {
+        console.log(model.pedido);
+    }
+
+    function AtualizarTotal() {
+        model.pedido.Total = 0;
+        model.pedido.Produtos.forEach(function (obj, index) {
+            model.pedido.Total += obj.Valor;
+        });
     }
 }

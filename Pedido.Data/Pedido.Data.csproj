@@ -52,6 +52,10 @@
     <Compile Include="Migrations\201907201832014_Initial.Designer.cs">
       <DependentUpon>201907201832014_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907220020277_adicionado valor ao produto.cs" />
+    <Compile Include="Migrations\201907220020277_adicionado valor ao produto.Designer.cs">
+      <DependentUpon>201907220020277_adicionado valor ao produto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PedidoContext.cs" />
     <Compile Include="PedidoData.cs" />
@@ -75,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907201832014_Initial.resx">
       <DependentUpon>201907201832014_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907220020277_adicionado valor ao produto.resx">
+      <DependentUpon>201907220020277_adicionado valor ao produto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

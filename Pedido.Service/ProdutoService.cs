@@ -14,7 +14,8 @@ namespace Pedido.Service
         {
             return ProdutoData.Listar().Select(x => new ProdutoDTO {
                 Descricao = x.Descricao,
-                ProdutoId = x.ProdutoId
+                ProdutoId = x.ProdutoId,
+                Valor = x.Valor
             }).ToList();
         } 
     }

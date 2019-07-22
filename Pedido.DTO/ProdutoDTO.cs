@@ -10,6 +10,7 @@ namespace Pedido.DTO
     {
         public int ProdutoId { get; set; }
         public string Descricao { get; set; }
+        public long Valor { get; set; }
 
     }
 }
